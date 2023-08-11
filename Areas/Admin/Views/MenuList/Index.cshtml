@@ -1,0 +1,86 @@
+﻿@model IEnumerable<restoran.Models.MenuList>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <br/>
+    <p>
+        <a asp-action="Create" class="btn btn-outline-primary" style="width:200px; height:40px; " >Menüye ürün ekle</a>
+    </p>
+    <br/>
+    <table class="table table-bordered table-striped" id="mytable">
+        <thead>
+            <tr>
+                <th>
+                    Resim
+                </th>
+                <th>
+                    Başlık
+                </th>
+                <th>
+                    Fiyat
+                </th>
+                
+                <th>
+                    Kategori
+                </th>
+
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @if (item.Resim == null)
+                        {
+                            <img widht="90" height="70" src="~/Site/images/noimage.png" />
+                        }
+                        else
+                        {
+                            <img src="@item.Resim" widht="100" height="80" />
+                        }
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Baslik)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fiyat)
+                    </td>
+
+                   
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Kategori.Isim)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-success btn-sm"> <i class="bi bi-pencil-fill"></i>Güncelle</a>
+
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger btn-sm"><i class="bi bi-trash3-fill"> </i>Sil</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $('#mytable').DataTable(
+
+                {
+                    "language": {
+                        "url": "https://cdn.datatables.net/plug-ins/1.10.20/i18n/Turkish.json"
+                    }
+                }
+            );
+        });
+        
+    </script>
+}
+

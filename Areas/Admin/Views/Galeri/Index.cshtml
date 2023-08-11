@@ -1,0 +1,46 @@
+﻿@model IEnumerable<restoran.Models.Galeri>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<p>
+    <a asp-action="Create" class="btn btn-outline-primary">Resim Ekle</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Resim
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+
+
+        <tr>
+            <td>
+                @if (item.Resim == null)
+                {
+                    <img src="~/Site/images/noimage.png" width="90" height="70" />
+                }
+                else
+                {
+                    <img src="@item.Resim" width="90" height="70" />
+                }
+
+            </td>
+            <td>
+
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger"><i class="bi bi-trash3-fill"></i>Sil</a>
+            </td>
+           
+        </tr>
+}
+    </tbody>
+</table>

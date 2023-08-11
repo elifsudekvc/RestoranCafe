@@ -1,0 +1,85 @@
+﻿@model IEnumerable<restoran.Models.SiparisList>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<table class="table table-bordered table-striped" id="mytable">
+    <thead>
+        <tr>
+            <th>
+                İsim Soyisim
+            </th>
+            <th>
+                Telefon No
+            </th>
+            <th>
+                Kişi Sayısı
+            </th>
+            <th>
+                Masa No
+            </th>
+            <th>
+                Not
+            </th>
+            <th>
+                Siparis
+            </th>
+            <th>
+                Siparis Durumu Giriniz
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Isim)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TelNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KisiSayisi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MasaNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Not)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Siparisler)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SiparisDurum)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-primary"><i class="bi bi-pencil-fill"></i> Güncelle</a>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-secondary "><i class="bi bi-card-list"></i> Detay</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger "><i class="bi bi-trash3-fill"></i> Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $('#mytable').DataTable(
+
+                {
+                    "language": {
+                        "url": "https://cdn.datatables.net/plug-ins/1.10.20/i18n/Turkish.json"
+                    }
+                }
+            );
+        });
+
+    </script>
+}

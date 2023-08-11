@@ -1,0 +1,193 @@
+﻿
+@model restoran.Models.SiparisList
+@{
+    ViewData["Title"] = "SiparisList";
+    Layout = "~/Views/Shared/_ALayout.cshtml";
+}
+
+
+<!-- Title Page -->
+<section class="bg-title-page flex-c-m p-t-160 p-b-80 p-l-15 p-r-15" style="background-image: url(/Site/images/bg-title-page-02.jpg);">
+    <h2 class="tit6 t-center">
+        SİPARİŞ OLUŞTURUN
+    </h2>
+</section>
+
+
+
+<section class="section-reservation bg1-pattern p-t-100 p-b-113">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 p-b-15">
+                <div class="t-center">
+                    <span class="tit2 t-center">
+                        Sipariş
+                    </span>
+
+                    <h6 class="tit3 t-center m-b-12 m-t-10">
+                        Oluşturduğunuz sipariş yaklaşık 10-15 dakikada masanıza gelecektir.
+                    </h6>
+                </div>
+                <span class="tit7">
+                    <center>
+                        Menü
+                    </center>
+                </span>
+
+                <a asp-area="Musteri" asp-controller="Home" asp-action="Menu" class="btn1 flex-c-m menubx size39 txt3 trans-0-4">
+                    Menüyü daha detaylı görmek için tıklayınız.
+                </a>
+                @foreach (var item in ViewBag.menu)
+                {
+                    <div class="siparisMenu txt9">
+                        <br />
+                        <span class="txt9"> Ürün Adı: </span>
+                        <label class="siparisDetay txt9" for="SiparisList"> @item.Baslik </label> <span class="txt9"> Açıklama: </span>
+                        <label class="siparisDetay txt9" for="SiparisLis"> @item.Aciklama </label><span class="txt9"> Fiyat: </span>
+                        <label class="siparisDetay txt9" for="SiparisLis"> @item.Fiyat (₺) </label>
+                        <br />
+
+                    </div>
+                }
+
+
+                <br />
+
+                <form class="wrap-form-reservation size22 m-l-r-auto " asp-action="SiparisList">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <span style="color:red; " class="txt9">
+                                Siparişinizi giriniz
+                            </span>
+
+                            <div class="wrap-inputemail size12 bo2 bo-rad-10 m-t-3 m-b-23">
+                                <textarea asp-for="Siparisler" class="bo-rad-10 sizefull txt10 p-l-20" type="text" placeholder="Lütfen istediğiniz ürünlerin sadece adını giriniz."></textarea>
+                                <span asp-validation-for="Siparisler" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+
+                            <span style="color:red; " class="txt9">
+                                Notunuz
+                            </span>
+
+                            <div class="wrap-inputemail size12 bo2 bo-rad-10 m-t-3 m-b-23">
+                                <textarea asp-for="Not" class="bo-rad-10 sizefull txt10 p-l-20" type="text" placeholder="Notunuz varsa buraya giriniz."></textarea>
+                                <span asp-validation-for="Not" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <br />
+
+                    <div class="row t-center">
+                        <div class="col-md-6">
+
+                            <span style="color:red;" class="txt9">
+                                Masa Numarasını giriniz
+                            </span>
+
+                            <div class="wrap-inputtime size12 bo2 bo-rad-10 m-t-3 m-b-23">
+                                <!-- Select2 -->
+                                <select class="selection-1" asp-for="MasaNo">
+                                    <option>Masa 1</option>
+                                    <option>Masa 2</option>
+                                    <option>Masa 3</option>
+                                    <option>Masa 4</option>
+                                    <option>Masa 5</option>
+                                    <option>Masa 6</option>
+                                    <option>Masa 7</option>
+                                    <option>Masa 8</option>
+                                    <option>Masa 9</option>
+                                    <option>Masa 10</option>
+                                    <option>Masa 11</option>
+                                    <option>Masa 12</option>
+                                    <option>Masa 13</option>
+                                    <option>Masa 14</option>
+                                    <option>Masa 15</option>
+                                    <option>Masa 16</option>
+                                    <option>Masa 17</option>
+                                    <option>Masa 18</option>
+
+                                </select>
+                                <span asp-validation-for="MasaNo" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <!-- People -->
+                            <span style="color:red;" class="txt9">
+                                Kişi Sayısını giriniz
+                            </span>
+
+                            <div class="wrap-inputpeople size12 bo2 bo-rad-10 m-t-3 m-b-23">
+                                <!-- Select2 -->
+                                <select class="selection-1" asp-for="KisiSayisi">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
+                                    <option>9</option>
+                                    <option>10</option>
+                                    <option>11</option>
+                                    <option>12</option>
+                                </select>
+                                <span asp-validation-for="KisiSayisi" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <!-- Name -->
+                            <span style="color:red;" class="txt9">
+                                İsim Soyisim
+                            </span>
+
+                            <div class="wrap-inputname size12 bo2 bo-rad-10 m-t-3 m-b-23">
+                                <input asp-for="Isim" class="bo-rad-10 sizefull txt10 p-l-20" type="text" placeholder="İsim Soyisim">
+                                <span asp-validation-for="Isim
+                                      " class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <!-- Phone -->
+                            <span style="color:red;" class="txt9">
+                                Telefon Numarası
+                            </span>
+
+                            <div class="wrap-inputphone size12 bo2 bo-rad-10 m-t-3 m-b-23">
+                                <input asp-for="TelNo" class="bo-rad-10 sizefull txt10 p-l-20" type="text" placeholder="0500 000 00 00">
+                                <span asp-validation-for="TelNo" class="text-danger"></span>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="wrap-btn-booking flex-c-m m-t-6">
+                        <!-- Button3 -->
+                        <button type="submit" class="btn3 flex-c-m size13 txt11 trans-0-4">
+                            Siparişinizi Oluşturun.
+                        </button>
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,347 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="icon" type="image/png" href="/Site/images/elisaicon.png" />
+    
+    <link rel="stylesheet" type="text/css" href="/Site/vendor/bootstrap/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="/Site/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="/Site/fonts/themify/themify-icons.css">
+    
+    <link rel="stylesheet" type="text/css" href="/Site/vendor/animate/animate.css">
+    
+    <link rel="stylesheet" type="text/css" href="/Site/vendor/css-hamburgers/hamburgers.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="/Site/vendor/animsition/css/animsition.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="/Site/vendor/select2/select2.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="/Site/vendor/daterangepicker/daterangepicker.css">
+    
+    <link rel="stylesheet" type="text/css" href="/Site/vendor/slick/slick.css">
+    
+    <link rel="stylesheet" type="text/css" href="/Site/vendor/lightbox2/css/lightbox.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="/Site/css/util.css">
+    <link rel="stylesheet" type="text/css" href="/Site/css/main.css">
+    <style>
+        .siparis {
+            background-color: #ffffff;
+            border-style: outset;
+            border: 2px solid red;
+            border-radius: 8px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            margin-right: 50px;
+            margin-left: 50px;
+            padding-top: 20px;
+            padding-right: 20px;
+            padding-bottom: 20px;
+            padding-left: 20px;
+        }
+        .siparisDetay {
+            color: red;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .siparisMenu {
+            max-height: 150px;
+            background-color: #F8F8FF;
+            border-style: outset;
+            border: 1px outset red;
+            border-radius: 8px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            margin-right: 5px;
+            margin-left: 5px;
+            padding-top: 3px;
+            padding-right: 15px;
+            padding-bottom: 13px;
+            padding-left: 15px;
+        }
+        .iletisimButon {
+            
+            
+            color: white;
+        }
+        .wad{
+            width:320px;
+            margin-left:30px;
+        }
+    </style>
+</head>
+<body class="animsition">
+
+    <!-- Header -->
+    <header>
+        <!-- Header desktop -->
+        <div class="wrap-menu-header gradient1 trans-0-4">
+            <div class="container h-full">
+                <div class="wrap_header trans-0-3">
+                    <!-- Logo -->
+                    <div class="logo">
+                        <a asp-area="Musteri" asp-controller="Home" asp-action="Index">
+                            <img src="/Site/images/elisaicon.png" alt="IMG-LOGO" data-logofixed="/Site/images/elisaicon.png">
+                        </a>
+                    </div>
+
+                    <!-- Menu -->
+                    <div class="wrap_menu p-l-45 p-l-0-xl">
+                        <nav class="menu">
+                            <ul class="main_menu">
+                                <li>
+                                    <a asp-area="Musteri" asp-controller="Home" asp-action="Index">Anasayfa</a>
+                                </li>
+
+                                <li>
+                                    <a asp-area="Musteri" asp-controller="Home" asp-action="Menu">Menü</a>
+                                </li>
+
+                                <li>
+                                    <a asp-area="Musteri" asp-controller="Home" asp-action="SiparisList">Sipariş</a>
+                                </li>
+
+                                <li>
+                                    <a asp-area="Musteri" asp-controller="Home" asp-action="Galeri">Galeri</a>
+                                </li>
+                                <li>
+                                    <a asp-area="Musteri" asp-controller="Home" asp-action="Hakkimizda">Hakkımızda</a>
+                                </li>
+
+                                <li>
+                                    <a asp-area="Musteri" asp-controller="Home" asp-action="YorumList">Yorumlar</a>
+                                </li>
+
+                                <li>
+                                    <a asp-area="Musteri" asp-controller="Home" asp-action="Iletisim">İletişim</a>
+                                </li>
+
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <!-- Social -->
+                    <div class="social flex-w flex-l-m p-r-20">
+
+                        <a href="#" class="fs-15 c-white"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" class="fs-15 c-white"><i class="fa fa-facebook m-l-18" aria-hidden="true"></i></a>
+                        <a href="#" class="fs-15 c-white"><i class="fa fa-twitter m-l-18" aria-hidden="true"></i></a>
+                        <button class="btn-show-sidebar m-l-33 trans-0-4"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar trans-0-4">
+        <!-- Button Hide sidebar -->
+        <button class="btn-hide-sidebar ti-close color0-hov trans-0-4"></button>
+
+        <!-- - -->
+        <ul class="menu-sidebar p-t-95 p-b-70">
+            <li class="t-center m-b-13">
+                <a asp-area="Musteri" asp-controller="Home" asp-action="Index" class="txt19">Anasayfa</a>
+            </li>
+
+            <li class="t-center m-b-13">
+                <a asp-area="Musteri" asp-controller="Home" asp-action="Menu" class="txt19">Menü</a>
+            </li>
+
+            <li class="t-center m-b-13">
+                <a asp-area="Musteri" asp-controller="Home" asp-action="Galeri" class="txt19">Galeri</a>
+            </li>
+
+            <li class="t-center m-b-13">
+                <a asp-area="Musteri" asp-controller="Home" asp-action="Hakkimizda" class="txt19">Hakkımızda</a>
+            </li>
+
+            <li class="t-center m-b-13">
+                <a asp-area="Musteri" asp-controller="Home" asp-action="YorumList" class="txt19">Yorumlar</a>
+            </li>
+
+            <li class="t-center m-b-33">
+                <a asp-area="Musteri" asp-controller="Home" asp-action="Iletisim" class="txt19">İletişim</a>
+            </li>
+
+            <li class="t-center">
+                <!-- Button3 -->
+                <a asp-area="Musteri" asp-controller="Home" asp-action="SiparisList" class="btn3 flex-c-m size13 txt11 trans-0-4 m-l-r-auto">
+                    Sipariş
+                </a>
+            </li>
+            <br />
+            @if (User.Identity.IsAuthenticated)
+            {
+                <li class="t-center m-b-33">
+                    <a asp-area="Admin" asp-controller="MenuList" asp-action="Index" target="_blank" class="txt19">Admin Paneli</a>
+                </li>
+                <li class="t-center">
+                    <form class="t-center m-b-33" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                        <button type="submit" class="t-center m-b-33">ÇIKIŞ</button>
+                    </form>
+                </li>
+            }
+        </ul>
+
+        <!-- - -->
+        <div class="gallery-sidebar t-center p-l-60 p-r-60 p-b-40">
+           
+
+          
+        </div>
+    </aside>
+
+    @RenderBody()
+
+
+    <!-- Footer -->
+    <footer class="bg1">
+        <div class="container p-t-40 p-b-70">
+            <div class="row">
+                <div class="col-sm-6 col-md-4 p-t-50">
+                    <!-- - -->
+                    <h4 class="txt13 m-b-33">
+                        BİZİMLE İLETİŞİME GEÇİN
+                    </h4>
+
+                    <ul class="m-b-70">
+                        <li class="txt14 m-b-14">
+                            <i class="fa fa-map-marker fs-16 dis-inline-block size19" aria-hidden="true"></i>
+                            Köşk, Talas blv. no:65 Melikgazi Kayseri
+                        </li>
+
+                        <li class="txt14 m-b-14">
+                            <i class="fa fa-phone fs-16 dis-inline-block size19" aria-hidden="true"></i>
+                            0352 222 22 22
+                        </li>
+
+                        <li class="txt14 m-b-14">
+                            <i class="fa fa-envelope fs-13 dis-inline-block size19" aria-hidden="true"></i>
+                            iletisim@gmail.com
+                        </li>
+                    </ul>
+
+                    <!-- - -->
+                    <h4 class="txt13 m-b-32">
+                        AÇILIŞ SAATİ
+                    </h4>
+
+                    <ul>
+                        <li class="txt14">
+                            10:00 – 00:00
+                        </li>
+
+                        <li class="txt14">
+                            Her Gün
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-sm-6 col-md-4 p-t-50">
+                    <!-- - -->
+                    <h4 class="txt13 m-b-33">
+                        Sizleri Elisa Restoran'da ağırlamaktan mutluluk duyarız!
+                    </h4>
+
+                    <p class="m-t-20 m-b-40">İstekleriniz, görüşleriniz ve mesajlarınız için iletişim sayfasından bizimle iletişime geçin.</p>
+                    <a asp-area="Musteri" asp-controller="Home" asp-action="Iletisim" class="iletisimButon">İLETİŞİM</a>
+                </div>
+
+                <div class="col-sm-6 col-md-4 p-t-50">
+                    <!-- - -->
+                    <h4 class="txt13 m-b-33">
+                        Sosyal Medya
+                    </h4>
+                    <div class="p-t-5 p-b-5">
+                        <a href="#" class="fs-15 c-white"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" class="fs-15 c-white"><i class="fa fa-facebook m-l-18" aria-hidden="true"></i></a>
+                        <a href="#" class="fs-15 c-white"><i class="fa fa-twitter m-l-18" aria-hidden="true"></i></a>
+                    </div>
+                    <p style="margin-top:20px;">Elisa Restoran, benzersiz bir deneyim sunan 2017'den beri hizmet veren mekanıdır. Taze ve seçkin malzemelerle hazırlanan lezzetli yemeklerimiz, sıcak ve samimi bir atmosferde sunulmaktadır.</p>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="end-footer bg2">
+            <div class="container">
+                <div class="flex-sb-m flex-w p-t-22 p-b-22">
+                    <div class="p-t-5 p-b-5">
+                        <a href="#" class="fs-15 c-white"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" class="fs-15 c-white"><i class="fa fa-facebook m-l-18" aria-hidden="true"></i></a>
+                        <a href="#" class="fs-15 c-white"><i class="fa fa-twitter m-l-18" aria-hidden="true"></i></a>
+                    </div>
+
+                    <div class="txt17 p-r-20 p-t-5 p-b-5">
+                        <a asp-area="Identity" asp-page="/Account/Login" target="_blank">© 2023 ELİSA RESTORAN</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Back to top -->
+    <div class="btn-back-to-top bg0-hov" id="myBtn">
+        <span class="symbol-btn-back-to-top">
+            <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+        </span>
+    </div>
+
+    <!-- Container Selection1 -->
+    <div id="dropDownSelect1"></div>
+
+    <!-- Modal Video 01-->
+    <div class="modal fade" id="modal-video-01" tabindex="-1" role="dialog" aria-hidden="true">
+
+        <div class="modal-dialog" role="document" data-dismiss="modal">
+            <div class="close-mo-video-01 trans-0-4" data-dismiss="modal" aria-label="Close">&times;</div>
+
+            <div class="wrap-video-mo-01">
+                <div class="w-full wrap-pic-w op-0-0"><img src="/Site/images/icons/video-16-9.jpg" alt="IMG"></div>
+                <div class="video-mo-01">
+                    <iframe src="https://www.youtube.com/embed/5k1hSu2gdKE?rel=0&amp;showinfo=0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+   
+    <script type="text/javascript" src="/Site/vendor/jquery/jquery-3.2.1.min.js"></script>
+   
+    <script type="text/javascript" src="/Site/vendor/animsition/js/animsition.min.js"></script>
+   
+    <script type="text/javascript" src="/Site/vendor/bootstrap/js/popper.js"></script>
+    <script type="text/javascript" src="/Site/vendor/bootstrap/js/bootstrap.min.js"></script>
+   
+    <script type="text/javascript" src="/Site/vendor/select2/select2.min.js"></script>
+   
+    <script type="text/javascript" src="/Site/vendor/daterangepicker/moment.min.js"></script>
+    <script type="text/javascript" src="/Site/vendor/daterangepicker/daterangepicker.js"></script>
+   
+    <script type="text/javascript" src="/Site/vendor/slick/slick.min.js"></script>
+    <script type="text/javascript" src="/Site/js/slick-custom.js"></script>
+   
+    <script type="text/javascript" src="/Site/vendor/parallax100/parallax100.js"></script>
+    <script type="text/javascript">
+        $('.parallax100').parallax100();
+    </script>
+   
+    <script type="text/javascript" src="/Site/vendor/countdowntime/countdowntime.js"></script>
+   
+    <script type="text/javascript" src="/Site/vendor/lightbox2/js/lightbox.min.js"></script>
+   
+    <script src="/Site/js/main.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+    @await Component.InvokeAsync("NToastNotify")
+</body>
+</html>

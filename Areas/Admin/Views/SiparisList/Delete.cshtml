@@ -1,0 +1,64 @@
+﻿@model restoran.Models.SiparisList
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<h3>Silmek istedğinizden emin misiniz?</h3>
+<div>
+    
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            İsim Soyisim
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Isim)
+        </dd>
+        <dt class="col-sm-2">
+            Telefon No
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TelNo)
+        </dd>
+        <dt class="col-sm-2">
+            Kişi sayısı
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.KisiSayisi)
+        </dd>
+        <dt class="col-sm-2">
+            Masa No
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MasaNo)
+        </dd>
+        <dt class="col-sm-2">
+            Not
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Not)
+        </dd>
+        <dt class="col-sm-2">
+            Siparişler
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Siparisler)
+        </dd>
+        <dt class="col-sm-2">
+            Siparişin durumu
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SiparisDurum)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Sil" class="btn btn-outline-danger" /> 
+        <a asp-action="Index"class="btn btn-outline-secondary">Listeye Dön</a>
+    </form>
+</div>

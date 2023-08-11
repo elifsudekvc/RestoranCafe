@@ -1,0 +1,86 @@
+﻿@model IEnumerable<restoran.Models.YorumList>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<table class="table table-bordered table-striped" id="mytable">
+    <thead>
+        <tr>
+            <th>
+                Resim
+            </th>
+            <th>
+                Telefon No
+            </th>
+            <th>
+                Onay
+            </th>
+            <th>
+                Yorum
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @if (item.Resim == null)
+                    {
+                        <img widht="90" height="70" src="~/Site/images/noimage.png" />
+                    }
+                    else
+                    {
+                        <img src="@item.Resim" widht="100" height="80" />
+                    }
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.TelNo)
+                </td>
+
+                <td>
+                    @if (item.Onay)
+                    {
+                        <button class="btn btn-success"><i class="bi bi-check-square-fill"></i> Evet</button>
+                    }
+                    else
+                    {
+                        <button class="btn btn-danger"><i class="bi bi-x-circle-fill"></i> Hayır</button>
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Mesaj)
+                </td>
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-success"><i class="bi bi-check-square-fill"></i> Onayla</a>
+
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger"><i class="bi bi-trash3-fill"> </i> Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $('#mytable').DataTable(
+
+                {
+                    "language": {
+                        "url": "https://cdn.datatables.net/plug-ins/1.10.20/i18n/Turkish.json"
+                    }
+                }
+            );
+        });
+
+    </script>
+    }

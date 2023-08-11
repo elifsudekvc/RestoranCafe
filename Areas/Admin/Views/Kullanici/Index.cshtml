@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Kullanici>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<div class="row">
+    <div class="col-md-6">
+        <h2 class="text-primary">Kullanıcı Listesi</h2>
+    </div>
+    <div class="col-md-6">
+        <p>
+            <a asp-area="Identity" asp-page="/Account/Register" class="btn btn-outline-primary form-control">Kullanıcı Ekle</a>
+        </p>
+    </div>
+</div>
+<table class="table table-striped" id="mytable">
+    <thead>
+        <tr>
+            <th>
+                İsim
+            </th>
+            <th>
+                Soyİsim
+            </th>
+            <th>
+                Email
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Isim)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Soyisim)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                
+                <a asp-action="Delete" asp-route-id="@item.Id.ToString()" class="btn btn-outline-danger"><i class="bi bi-trash3-fill"></i> Sil</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $('#mytable').DataTable(
+
+                {
+                    "language": {
+                        "url": "https://cdn.datatables.net/plug-ins/1.10.20/i18n/Turkish.json"
+                    }
+                }
+            );
+        });
+
+    </script>
+}

@@ -1,0 +1,65 @@
+﻿@model restoran.Models.SiparisList
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Güncelle</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                İsim Soyisim
+                <input asp-for="Isim" class="form-control" />
+                <span asp-validation-for="Isim" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                Telefon No
+                <input asp-for="TelNo" class="form-control" />
+                <span asp-validation-for="TelNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                Kişi Sayısı
+                <input asp-for="KisiSayisi" class="form-control" />
+                <span asp-validation-for="KisiSayisi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                Masa No
+                <input asp-for="MasaNo" class="form-control" />
+                <span asp-validation-for="MasaNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                Not
+                <input asp-for="Not" class="form-control" />
+                <span asp-validation-for="Not" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                Siparişler
+                <input asp-for="Siparisler" class="form-control" />
+                <span asp-validation-for="Siparisler" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                Siparişin Durumunu Giriniz.
+                <input asp-for="SiparisDurum" class="form-control" />
+                <span asp-validation-for="SiparisDurum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Güncelle" class="btn btn-outline-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index"class="btn btn-outline-secondary">Listeye Dön</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,25 @@
+﻿@model restoran.Models.Hakkimizda
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Bu kaydı silmek istediğinizden emin misiniz?</h3>
+<div>
+    
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Başlık
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Baslik)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Sil" class="btn btn-outline-danger" /> 
+        <a asp-action="Index" class="btn btn-outline-primary ">Listeye Dön</a>
+    </form>
+</div>

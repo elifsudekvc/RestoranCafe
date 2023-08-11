@@ -1,0 +1,57 @@
+﻿@model IEnumerable<restoran.Models.MenuList>
+@{
+    ViewData["Title"] = "Menu";
+    Layout = "~/Views/Shared/_ALayout.cshtml";
+}
+
+<section class="bg-title-page flex-c-m p-t-160 p-b-80 p-l-15 p-r-15" style="background-image: url(/Site/images/bg-title-page-01.jpg);">
+    <h2 class="tit6 t-center">
+        MENÜ LİSTESİ
+    </h2>
+</section>
+
+<div class="section-gallery p-t-20">
+    <div class="section-gallery p-t-1 p-b-1">
+        <!--await komutu işlem veya fonksiyon çağrısı üstüne kullanılır. işlem tamamlanınca elde edilen sonucu döndürür.-->
+        @await Component.InvokeAsync("CategoryList")
+
+    </div>
+
+</div>
+
+<section class="section-lunch bgwhite">
+
+    <div class="container">
+        <div class="row p-t-15">
+            @foreach (var item in Model) { 
+            
+                <div class="col-md-12 col-lg-6 ">
+                    <!-- Block3 -->
+                    <div class="blo3 flex-w flex-col-l-sm m-b-30">
+                        <div class="pic-blo3 size20 bo-rad-10 hov-img-zoom m-r-28">
+                            <a><img src="@item.Resim" alt="IMG-MENU"></a>
+                        </div>
+
+                        <div class="text-blo3 size21 flex-col-l-m">
+                            <a class="txt21 m-b-3">
+                                @item.Baslik
+                            </a>
+
+                            <span class="txt23">
+                                @item.Aciklama
+                            </span>
+
+                            <span class="txt22 m-t-20">
+                                @item.Fiyat (₺)
+                            </span>
+                        </div>
+                    </div>
+                </div>
+              }
+
+        </div>
+    </div>
+</section>
+
+
+

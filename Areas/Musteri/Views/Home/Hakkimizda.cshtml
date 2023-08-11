@@ -1,0 +1,36 @@
+﻿@model IEnumerable<restoran.Models.Hakkimizda>
+@{
+    ViewData["Title"] = "Hakkimizda";
+    Layout = "~/Views/Shared/_ALayout.cshtml";
+}
+
+<!-- Title Page -->
+<section class="bg-title-page flex-c-m p-t-160 p-b-80 p-l-15 p-r-15" style="background-image: url(/Site/images/cafe27.jpg);">
+    <h2 class="tit6 t-center">
+        HAKKIMIZDA
+    </h2>
+</section>
+
+
+<!-- Our Story -->
+<section class="bg2-pattern p-t-116 p-b-110 t-center p-l-15 p-r-15">
+    <span class="tit2 t-center">
+        Elisa Cafe & Restoran
+    </span>
+
+    <h3 class=" t-center m-b-35 m-t-5">
+        <strong>HAKKIMIZDA</strong>
+    </h3>
+
+    @foreach (var item in Model)
+    {
+        <p class="t-center size32 m-l-r-auto">
+            @item.Baslik
+            <br />
+            <br />
+        </p>
+
+    }
+    <br />
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/ZRnIn8IS2JA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</section>

@@ -1,0 +1,55 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+@if (User.Identity.IsAuthenticated)
+{
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                <h4 style="color:deepskyblue">Kayıt Formu</h4>
+                <hr />
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    İsim
+                    <input asp-for="Input.Isim" class="form-control" />
+                    <span asp-validation-for="Input.Isim" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    Soyisim
+                    <input asp-for="Input.Soyisim" class="form-control" />
+                    <span asp-validation-for="Input.Soyisim" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    Email
+                    <input asp-for="Input.Email" class="form-control" />
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    Telefon Numarası
+                    <input asp-for="Input.TelNo" class="form-control" />
+                    <span asp-validation-for="Input.TelNo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    Şifre
+                    <input asp-for="Input.Password" class="form-control" />
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    Şifre Tekrar
+                    <input asp-for="Input.ConfirmPassword" class="form-control" />
+                    <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-outline-success form-control">Üye ol</button>
+            </form>
+        </div>
+        
+    </div>
+}
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
